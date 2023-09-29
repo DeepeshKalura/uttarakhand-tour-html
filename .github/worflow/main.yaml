@@ -1,0 +1,23 @@
+name: CD for Main Branches
+
+on:
+  branch:
+    - master
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Printing the current branch
+        run: echo "I am batman"
+      - name: Deploying to Production
+        run: exho "I am deepesh"
+    
+
